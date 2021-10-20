@@ -29,6 +29,7 @@ module.exports = {
 
     async getAll(req, res) {
         let result = await auths.findAll({
+            attributes: ['id','nama', 'alamat','nama_puskesmas']
         }).then(result => {
             return apiResponse.successResponseWithData(res, "SUCCESS", result);
             }).catch(function (err){
